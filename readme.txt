@@ -4,3 +4,9 @@ Develop a “Testimonials”, considering the following technical requirements:
 ⁃    only a registered user should be able to add feedback
 ⁃    features for testimonials viewing, filtering and sorting should be available in administration panel
 ⁃    features for testimonials updating and deleting should be available in administration panel
+
+
+
+to do
+function checkUserName
+Session()

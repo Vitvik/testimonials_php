@@ -1,18 +1,6 @@
 
 <?php
-/**
- * Created by PhpStorm.
- * User: tkachukvital
- * Date: 07.11.2017
- * Time: 17:33
- */
-include_once 'config.php';
-include_once 'AbstractClass.php';
-include_once 'User.php';
-include_once 'Testimonial.php';
 
-
-$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,14 +19,22 @@ $db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
             <input type="submit" name="send" value="Send">
         </form>
     <?php
-
+        /*
         if(!empty($_POST['nick'])&& $_POST['password'] === $_POST['password_confirm']){
             $new_registration = array('nick' => $_POST['nick'], 'password' => $_POST['password']);
             $new_user = new User();
             $new_user ->setInsert($db, $new_registration);
-            header("Location: index.php");
+            header("Location: old_index.php");
         }
+        */
 
+        $queryParam = array('testInsertNick2', 'testInsertPassword2',date('Y-m-d'));
+
+       // $new_user = new User();
+
+       // $new_user ->setInsert($db, $new_user ->getTableName(), $new_user ->getFields(), $queryParam);
+
+        echo "Jast HI";
 
 
 
