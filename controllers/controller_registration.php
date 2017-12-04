@@ -16,8 +16,11 @@ class Controller_registration extends Controller
 
     function  action_index()
     {
+        if(isset($_POST['cancel'])){
+            header("Location: main");
+        }
        // $data = $this->model->getAllRows();
-        if(isset($_POST['nick'])&& $_POST['password']===$_POST['password_confirm']) {
+        if(isset($_POST['send'])&& isset($_POST['nick'])&& $_POST['password']===$_POST['password_confirm']) {
             $this->model->setInsert($this->model->getTable(),$this->model->getFields(), $this->model->get_post_param());
             header("Location: main");
         }

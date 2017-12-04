@@ -26,6 +26,30 @@
 <p>
     Як висновок, застосування програм ООП плану є зручним для написання великих програм, тут підтримується модульність частин програми, зручність оновлення, єдине перед створенням такого напрямку програм потрібно добряче спланувати роботу.
 </p>
-<?php
+<h3>Залишити відгук</h3>
+<?php if(!empty($_SESSION['session_username'])):?>
+    <form class="add_message" action="#" method="post">
+        <textarea name="message" rows="10" cols="30"></textarea><br>
+        <input class="button" type="submit" name="user_testimonial" value="Відправити">
+    </form>
+<?php else:?>
+<h4>Тільки зареєстровані користувачі можуть залишати відгуки.</h4>
+    <p>Будь ласка увійдіть до облікового запису або зареєструйтесь.</p>
+<?php endif;?>
+<h3>Останні відгуки</h3>
+<?php if(!empty($data)): ?>
 
-?>
+    <table>
+        <tr><td class="col1">Name</td><td class="col2">Testimonial</td><td class="col3">Date</td></tr>
+        <?php foreach($data as $key => $value): ?>
+            <tr>
+                <?php foreach ($data[$key] as $value): ?>
+                    <td>
+                        <?php echo $value ?>
+                    </td>
+                <?php endforeach; ?>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+<?php endif; ?>

@@ -15,25 +15,29 @@ class Controller_authorization extends Controller
 
     function  action_index()
     {
-        if(isset($_POST['nick'])&& isset($_POST['password'])) {
+        if(isset($_POST['cancel'])){
+            header("Location: main");
+        }
+        if(isset($_POST['send'])&&isset($_POST['nick'])&& isset($_POST['password'])) {
             $result = $this->model->getUser($this->model->getTable(),$this->model->getFields(),$this->model->get_post_param());
-            if(empty($result)){
-                echo "Ви ввели неправильний логін або пароль";
-            }
-
             $username=htmlspecialchars($_POST['nick']);
             $password=htmlspecialchars($_POST['password']);
             if($username == $result['name'] && $password == $result['password'] && $result['role'] == 1){
                 $_SESSION['session_username'] = $result['name'];
                 $_SESSION['session_role'] = 1;
-
+                $_SESSION['session_id_user'] = $result['id'];
+                header("Location: main");
             }
             elseif($username == $result['name'] && $password == $result['password'] && $result['role'] == 0){
                 $_SESSION['session_username'] = $result['name'];
                 $_SESSION['session_role'] = 0;
-
+                $_SESSION['session_id_user'] = $result['id'];
+                header("Location: main");
             }
-            header("Location: main");
+            elseif ($username != $result['name']||$password != $result['password']){
+                echo "Ви ввели неправильний логін або пароль";
+            }
+
         }
 
         if(isset($_POST['exit'])){

@@ -5,18 +5,13 @@
  * Date: 10.11.2017
  * Time: 11:48
  */
-
-/*
-var_dump($_SESSION['session_username']);
-var_dump($_SESSION['session_role']);
-*/
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/styles1.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
     <title>MVC + testimonials</title>
 </head>
@@ -29,22 +24,23 @@ var_dump($_SESSION['session_role']);
                 <div class="authorization">
                     <?php if(!empty($_SESSION['session_username'])):?>
                         <form action="authorization" method="post">
-                            <input type="submit" name="exit" value="Вийти">
+                            <input class="button" type="submit" name="exit" value="Вийти">
                         </form>
                     <?php else :?>
                     <form action="authorization" method="post">
-                        <input type="submit" name="send" value="Увійти">
+                        <input class="button" type="submit" name="send" value="Увійти">
                     </form>
 
                     <form action="registration" method="post" class="registration">
-                        <input type="submit" name="registration" value="Зареєструватись">
+                        <input class="button" type="submit" name="registration" value="Зареєструватись">
                     </form>
                     <?php endif; ?>
                 </div>
                 <nav>
                     <ul class="clr">
                         <?php if(isset($_SESSION['session_role'])&& $_SESSION['session_role']==1):?>
-                        <li ><a href="admin">Адмін панель</a></li>
+                            <li ><a href="admin">Адмін панель</a></li>
+                            <li ><a href="main">Головна</a></li>
                         <?php endif ?>
                     </ul>
                 </nav>

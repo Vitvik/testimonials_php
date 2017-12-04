@@ -6,8 +6,13 @@
  * Time: 15:49
  */
 ?>
-<form action="#" method="post">
-    <input type="text" name="nick" placeholder="Введіть NickName" required>
-    <input type="password" name="password" placeholder="Введіть пароль" required>
-    <input type="submit" name="send" value="Увійти">
-</form>
+<div class="container">
+    <div class="popup" >
+        <form action="#" method="post">
+            <input type="text" name="nick" placeholder="Введіть NickName" required><br>
+            <input type="password" name="password" placeholder="Введіть пароль" required><br>
+            <input class="button" type="submit" name="send" value="Увійти">
+            <input class="button" type="submit" name="cancel" value="Відміна">
+        </form>
+    </div>
+</div>

@@ -23,11 +23,7 @@ class Model_authorization extends Model
 
     function get_post_param()
     {
-        $nick = $_POST['nick'];
-        $password = $_POST['password'];
-        $nick = parent::clean($nick);
-        $password = parent::clean($password);
-
+        $nick = parent::clean($_POST['nick']);
         return $queryParam = array($nick);
     }
 

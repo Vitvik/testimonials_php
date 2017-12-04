@@ -7,18 +7,33 @@
  */
 ?>
 <h1>Admin panel</h1>
-<p>All testimonials</p>
+<H2>All testimonials</H2>
 <?php if(!empty($data)): ?>
+
     <table>
-        <tr><td>id</td><td>id_user</td><td>testimonial</td><td>date</td></tr>
+        <tr><td>ID</td><td>Name</td><td>Testimonial</td><td>Date</td><td>Edit</td><td>Delete</td></tr>
         <?php foreach($data as $key => $value): ?>
+            <?php $id = $value['id']; ?>
             <tr>
                 <?php foreach ($data[$key] as $value): ?>
                     <td>
                         <?php echo $value ?>
                     </td>
                 <?php endforeach; ?>
+                    <td>
+                        <form action="#" method="post">
+                            <input type="hidden" name="edit_id" value="<?php  print $id; ?>">
+                            <input class="button" type="submit" name="edit" value="Редагувати">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="#" method="post">
+                            <input type="hidden" name="del_id" value="<?php  print $id; ?>">
+                            <input class="button" type="submit" name="del" value="Видалити">
+                        </form>
+                    </td>
             </tr>
         <?php endforeach; ?>
     </table>
+
 <?php endif; ?>

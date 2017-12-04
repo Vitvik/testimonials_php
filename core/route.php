@@ -10,8 +10,6 @@ class Route
 {
     static function start()
     {
-
-
         // контроллер и действие по умолчанию
         $controller_name = 'Main';
         $action_name = 'index';
@@ -36,14 +34,6 @@ class Route
         $model_name = 'Model_'.$controller_name;
         $controller_name = 'Controller_'.$controller_name;
         $action_name = 'action_'.$action_name;
-        /*
-        print_r($model_name);
-        echo "<br/>";
-        print_r($controller_name);
-        echo "<br/>";
-        print_r($action_name);
-        echo "<br/>";
-        */
 
         // подцепляем файл с классом модели (файла модели может и не быть)
 
