@@ -12,11 +12,13 @@ class Model_admin extends Model
     {
         return $table = 'testimonials';
     }
-    public function getFields(){
+    public function getFields()
+    {
         return $getFields = array('testimonial', 'id');
     }
 
-    public function getJoinUser() {
+    public function getJoinUser()
+    {
         $results = array();
         $query = $this->db->prepare("SELECT testimonials.id, users.name, testimonials.testimonial, testimonials.date 
                 FROM testimonials

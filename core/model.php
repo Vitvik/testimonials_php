@@ -17,7 +17,8 @@ class Model
         $this->db=$dbconect;
 
     }
-    function clean($value = "") {
+    function clean($value = "")
+    {
         $value = trim($value);
         $value = stripslashes($value);
         $value = strip_tags($value);
@@ -34,14 +35,16 @@ class Model
         $query = $this->db->prepare($sql);
         $query->execute($queryParam);
     }
-    public function update($table, $message, $id){
+    public function update($table, $message, $id)
+    {
 
         $query = $this->db->prepare("UPDATE $table SET `testimonial` = '$message' WHERE `id` = '$id'");
         $query->execute();
 
     }
 
-    public function getAllRows($table){
+    public function getAllRows($table)
+    {
 
         $results = array();
         $query = $this->db->prepare("SELECT * FROM $table");
@@ -49,7 +52,8 @@ class Model
         $results = $query->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
-    public function getById($table, $id){
+    public function getById($table, $id)
+    {
 
         $results = array();
         $query = $this->db->prepare("SELECT * FROM $table WHERE `id` = $id");
@@ -58,7 +62,8 @@ class Model
         return $results;
     }
 
-    public function delById($id){
+    public function delById($id)
+    {
         $query = $this->db->prepare("DELETE FROM `testimonials` WHERE `id`= $id");
         $query->execute();
     }

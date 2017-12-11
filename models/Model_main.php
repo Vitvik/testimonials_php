@@ -27,7 +27,8 @@ class Model_main extends Model
         return $queryParam = array($_SESSION['session_id_user'], $message, date('Y-m-d H:i:s'));
     }
 
-    public function getJoinUser() {
+    public function getJoinUser()
+    {
         $results = array();
         $query = $this->db->prepare("SELECT  users.name, testimonials.testimonial, testimonials.date 
                 FROM testimonials

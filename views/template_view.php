@@ -56,7 +56,7 @@
     </div>
     <footer>
         <div class="wrap">
-            <p>Автор: <a href="#">Ткачук Віталій</a> ©</p>
+            <p>Автор: <a target="_blank" href="https://github.com/Vitvik/testimonials_php">Ткачук Віталій</a> ©</p>
             <p>2017 рік</p>
         </div>
     </footer>
